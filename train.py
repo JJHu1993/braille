@@ -40,23 +40,6 @@ def read_data():
             train_X.append(x)
             train_Y.append(label2text.index(file.split("_")[-1].split(".")[0]))
 
-    # for i in range(output_dim):
-    #     for j in range(1,4):
-    #         x = np.loadtxt("./data/train/set" + str(j) + '/' + label2text[i] + ".txt", delimiter=',')
-    #         is_useful = np.sum(abs(x) > 20, 1) > 0
-    #         start = np.argmax(is_useful)
-    #         end = len(is_useful) - np.argmax(is_useful[::-1])
-    #         length = end-start
-    #         lengths.append(length)
-    #         pad = [[0,0,0] for i in range(max_length-length)]
-    #         x = np.concatenate((x[start:end], pad))
-    #         train_X.append(x)
-    #         train_Y.append(i)
-    #     plt.subplot(7,7,i+1)
-    #     plt.plot(train_X[-1])
-    # plt.show()
-    # train_X = np.array(train_X)
-    # train_X = (train_X - np.mean(train_X))/np.std(train_X)
     return np.array(train_X), np.array(train_Y), np.array(lengths)
 
 def main():
