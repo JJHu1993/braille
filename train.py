@@ -15,7 +15,7 @@ hidden_dim = 64
 output_dim = len(label2text)
 epoch = 20000
 batch_size = 16
-max_length = 70
+max_length = 120
 def read_data():
     # plt.figure()
     train_X = []
@@ -23,22 +23,23 @@ def read_data():
     lengths = []
     # #load data
     files = []
-    for i in [10,11]:
-        path = "./data/train/set"+str(i)+"/"
-        files = os.listdir(path)
-        for file in files:
-            # if 10 < int(file.split("_")[0]) or int(file.split("_")[0]) < 3:
-            #     continue
-            x = np.loadtxt(path + file, delimiter=',')
-            is_useful = np.sum(abs(x) > 10, 1) > 0
-            start = np.argmax(is_useful)
-            end = len(is_useful) - np.argmax(is_useful[::-1])
-            length = end-start
-            lengths.append(length)
-            pad = [[0,0,0] for i in range(max_length-length)]
-            x = np.concatenate((x[start:end], pad))
-            train_X.append(x)
-            train_Y.append(label2text.index(file.split("_")[-1].split(".")[0]))
+
+    path = "./data/train/on_human/"
+    files = os.listdir(path)
+    for file in files:
+        # if 10 < int(file.split("_")[0]) or int(file.split("_")[0]) < 3:
+        #     continue
+        x = np.loadtxt(path + file, delimiter=',')
+        is_useful = np.sum(abs(x) > 10, 1) > 0
+        start = np.argmax(is_useful)
+        end = len(is_useful) - np.argmax(is_useful[::-1])
+        length = end-start
+        lengths.append(length)
+        pad = [[0,0,0] for i in range(max_length-length)]
+        x = np.concatenate((x[start:end], pad))
+        train_X.append(x)
+        train_Y.append(label2text.index(file.split("_")[-1].split(".")[0]))
+
 
     return np.array(train_X), np.array(train_Y), np.array(lengths)
 
