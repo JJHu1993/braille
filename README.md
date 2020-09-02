@@ -30,14 +30,14 @@ readers. Moreover, it is worth noting that such accuracy (97%) is the recognitio
 character. If the semantic association strategy is employed, which is actually used by the
 human, the recognition accuracy could be further improved.
 
-##test trained model
+## test trained model
 ```
 python test.py
 
 ```
 
 
-##train model
+## train model
 ```
 python train.py
 
