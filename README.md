@@ -24,10 +24,7 @@ Here, an attention layer is introduced to help the LSTM network learn how to foc
 particular part of the tactile signals that can distinguish characters with similar readings (like
 the letter “u” and “g,” or “l” and “s”). After training on around 900 instances of Braille
 characters, the proposed model achieves a real-time recognition accuracy of 97% tested on
-the Braille poem Dreams, which is comparable to proficient human
-Science Robotics Manuscript Template Page 11 of 23
-readers. Moreover, it is worth noting that such accuracy (97%) is the recognition of a single
-character. If the semantic association strategy is employed, which is actually used by the
+the Braille poem Dreams, which is comparable to proficient human readers. Moreover, it is worth noting that such accuracy (97%) is the recognition of a single character. If the semantic association strategy is employed, which is actually used by the
 human, the recognition accuracy could be further improved.
 
 ##test trained model
