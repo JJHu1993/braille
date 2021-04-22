@@ -27,14 +27,14 @@ characters, the proposed model achieves a real-time recognition accuracy of 97% 
 the Braille poem Dreams, which is comparable to proficient human readers. Moreover, it is worth noting that such accuracy (97%) is the recognition of a single character. If the semantic association strategy is employed, which is actually used by the
 human, the recognition accuracy could be further improved.
 
-##test trained model
+## test trained model
 ```
 python test.py
 
 ```
 
 
-##train model
+## train model
 ```
 python train.py
 
